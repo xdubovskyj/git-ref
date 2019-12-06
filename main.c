@@ -124,6 +124,8 @@ void h(char pole2[1000], int isu){
      }
      char *g;
      
+     //treba prerobit na switch-case
+     
      g=pole2;
      while(*g!='\0'){
      celok++;
