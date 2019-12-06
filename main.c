@@ -40,7 +40,7 @@ int u(char pole[1000], char pole2[1000], FILE*p) {
          q++;
      }*/
      if(p==NULL){
-        printf("Sprava nie je nacitana\n");
+        printf("Sprava sa nenacitala\n");
         return 0; 
         }  
      for (q=0;q<1000;q++){
