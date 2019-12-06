@@ -29,13 +29,13 @@ void v(FILE *p, char pole[1000])  {
 
 int u(char pole[1000], char pole2[1000], FILE*p) {
      int q=0;
-     char *f;
-     f=pole2;
+     char *e;
+     e=pole2;
      /*while(1){
-       *f=pole[q];
-       if ((*f>64&&*f<91)||(*f>96&&*f<123)){
-           printf("%c",*f); 
-           f++;                     
+       *e=pole[q];
+       if ((*e>64&&*e<91)||(*e>96&&*e<123)){
+           printf("%c",*e); 
+           e++;                     
          }
          q++;
      }*/
@@ -44,12 +44,12 @@ int u(char pole[1000], char pole2[1000], FILE*p) {
         return 0; 
         }  
      for (q=0;q<1000;q++){
-         *f=pole[q];
+         *e=pole[q];
          if ((pole[q]>64&&pole[q]<91)||(pole[q]>96&&pole[q]<123)){
            if(pole[q]>96&&pole[q]<123){
-           *f=pole[q]-32;                            
+           *e=pole[q]-32;                            
            }
-           f++;                        
+           e++;                        
          }
          if (pole[q] == NULL || pole[q] == EOF) {
                       break;
