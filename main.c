@@ -106,7 +106,7 @@ void h(char pole2[1001], int isu){
      return;
      }
      char *g;
-     
+
      
      g=pole2;
      while(*g!='\0'){
@@ -231,6 +231,11 @@ void h(char pole2[1001], int isu){
      printf("\n");
      
      }
+
+void k(FILE *p){
+     if (fclose(p)==EOF) {
+     printf("subor sa nepodarilo zatvorit");
+      }} 
      
 int main(int argc, char *argv[])
 {
@@ -261,14 +266,11 @@ int main(int argc, char *argv[])
          break;
     case 'c': 
          c(pole2, isu);
-         break;                  
+         break;
+    case 'k':
+         k(p);
+         return 0;                  
   }                   
-    if(x=='k'){
-      if (fclose(p)==EOF) {
-      printf("subor sa nepodarilo zatvorit");
-      }
-      break;         
-    }
   }
   
   //kvôli Dev-C++
