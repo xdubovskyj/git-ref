@@ -271,12 +271,6 @@ int main(int argc, char *argv[])
          k(p);
          return 0;                  
   }                   
-    /*if(x=='k'){
-      if (fclose(p)==EOF) {
-      printf("subor sa nepodarilo zatvorit");
-      }
-      break;       
-    }*/
   }
   
   //kvôli Dev-C++
