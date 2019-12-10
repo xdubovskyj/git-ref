@@ -125,33 +125,6 @@ void h(char pole2[1001], int isu){
      g=pole2;
      while(*g!='\0'){
      celok++;
-       /*if(*g=='A'){pocty[0]++;}   
-       if(*g=='B'){pocty[1]++;} 
-       if(*g=='C'){pocty[2]++;} 
-       if(*g=='D'){pocty[3]++;} 
-       if(*g=='E'){pocty[4]++;} 
-       if(*g=='F'){pocty[5]++;} 
-       if(*g=='G'){pocty[6]++;} 
-       if(*g=='H'){pocty[7]++;} 
-       if(*g=='I'){pocty[8]++;} 
-       if(*g=='J'){pocty[9]++;} 
-       if(*g=='K'){pocty[10]++;} 
-       if(*g=='L'){pocty[11]++;} 
-       if(*g=='M'){pocty[12]++;} 
-       if(*g=='N'){pocty[13]++;} 
-       if(*g=='O'){pocty[14]++;} 
-       if(*g=='P'){pocty[15]++;} 
-       if(*g=='Q'){pocty[16]++;} 
-       if(*g=='R'){pocty[17]++;} 
-       if(*g=='S'){pocty[18]++;} 
-       if(*g=='T'){pocty[19]++;} 
-       if(*g=='U'){pocty[20]++;} 
-       if(*g=='V'){pocty[21]++;} 
-       if(*g=='W'){pocty[22]++;} 
-       if(*g=='X'){pocty[23]++;} 
-       if(*g=='Y'){pocty[24]++;} 
-       if(*g=='Z'){pocty[25]++;}*/           
-      
       switch(*g){
         case 'A':
              pocty[0]++;
