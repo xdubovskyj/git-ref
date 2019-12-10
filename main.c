@@ -55,6 +55,12 @@ void s (char pole2[1001], int isu){
      if(isu==1){
      printf("%s\n", pole2);
      }
+     switch(isu){
+       case 0: printf("Nie je k dispozicii upravena sprava\n");
+       break;
+       case 1: printf("%s\n", pole2);
+       break;
+                 }
      } 
      
 void d(FILE *p){
