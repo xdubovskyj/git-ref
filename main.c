@@ -58,11 +58,8 @@ void s (char pole2[1001], int isu){
      } 
      
 void d(FILE *p){
-     int k;
-     int pocet=0;
-     int pele=0;
-     char *l;
-     char pole3[1001];
+     int k, pocet=0, pele=0;
+     char *l, pole3[1001];
      scanf("%d", &k);
      rewind(p);
      while((pocet=fscanf(p, "%s", pole3))>0){
@@ -80,11 +77,8 @@ void d(FILE *p){
      }     
 
 void c(char pole2[1001], int isu){
-     int n;
-     int t;
-     char *z;
-     char *r;
-     char pele2[1001];
+     int n,t;
+     char *z, *r, pele2[1001];
      if(isu==0){
      printf("Nie je k dispozicii upravena sprava\n");
      return;
@@ -94,7 +88,7 @@ void c(char pole2[1001], int isu){
      r=pele2;
      while(*z!='\0'){
      if(*z-n<=65){
-     t=64-(*z-n);
+     t=65-(*z-n);
      *r=90-t;
      }
      else{*r=*z-n;}
@@ -242,9 +236,7 @@ int main(int argc, char *argv[])
 {
   FILE *p=NULL;
   
-  char x;
-  char pole[1001];
-  char pole2[1001];
+  char x, pole[1001], pole2[1001];
   int isu=0;
   
   while(x=getchar()){
