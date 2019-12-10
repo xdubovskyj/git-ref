@@ -156,7 +156,87 @@ void h(char pole2[1000], int isu){
        if(*g=='X'){pocty[23]++;} 
        if(*g=='Y'){pocty[24]++;} 
        if(*g=='Z'){pocty[25]++;}           
-                     
+      
+      switch(*g){
+        case 'A':
+             pocty[0]++;
+             break;
+        case 'B':
+             pocty[1]++;
+             break;
+        case 'C':
+             pocty[2]++;
+             break;
+        case 'D':
+             pocty[3]++;
+             break;
+        case 'E':
+             pocty[4]++;
+             break;
+        case 'F':
+             pocty[5]++;
+             break;
+        case 'G':
+             pocty[6]++;
+             break;
+        case 'H':
+             pocty[7]++;
+             break;
+        case 'I':
+             pocty[8]++;
+             break;
+        case 'J':
+             pocty[9]++;
+             break;
+        case 'K':
+             pocty[10]++;
+             break;
+        case 'L':
+             pocty[11]++;
+             break;
+        case 'M':
+             pocty[12]++;
+             break;
+        case 'N':
+             pocty[13]++;
+             break;
+        case 'O':
+             pocty[14]++;
+             break;
+        case 'P':
+             pocty[15]++;
+             break;
+        case 'Q':
+             pocty[16]++;
+             break;
+        case 'R':
+             pocty[17]++;
+             break;
+        case 'S':
+             pocty[18]++;
+             break;
+        case 'T':
+             pocty[19]++;
+             break;
+        case 'U':
+             pocty[20]++;
+             break;
+        case 'V':
+             pocty[21]++;
+             break;
+        case 'W':
+             pocty[22]++;
+             break;
+        case 'X':
+             pocty[23]++;
+             break;
+        case 'Y':
+             pocty[24]++;
+             break;
+        case 'Z':
+             pocty[25]++;
+             break;
+                 }               
      g++;
      }
      
