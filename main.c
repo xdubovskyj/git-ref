@@ -94,7 +94,7 @@ void c(char pole2[1001], int isu){
      r=pele2;
      while(*z!='\0'){
      if(*z-n<=65){
-     t=64-(*z-n);
+     t=65-(*z-n);
      *r=90-t;
      }
      else{*r=*z-n;}
