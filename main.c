@@ -130,7 +130,7 @@ void h(char pole2[1000], int isu){
      while(*g!='\0'){
      celok++;
      //printf("%c", *g);
-       if(*g=='A'){pocty[0]++;}   
+       /*if(*g=='A'){pocty[0]++;}   
        if(*g=='B'){pocty[1]++;} 
        if(*g=='C'){pocty[2]++;} 
        if(*g=='D'){pocty[3]++;} 
@@ -155,7 +155,7 @@ void h(char pole2[1000], int isu){
        if(*g=='W'){pocty[22]++;} 
        if(*g=='X'){pocty[23]++;} 
        if(*g=='Y'){pocty[24]++;} 
-       if(*g=='Z'){pocty[25]++;}           
+       if(*g=='Z'){pocty[25]++;}*/           
       
       switch(*g){
         case 'A':
