@@ -232,7 +232,10 @@ void h(char pole2[1001], int isu){
      
      }
 
-void k(){}   
+void k(FILE *p){
+     if (fclose(p)==EOF) {
+     printf("subor sa nepodarilo zatvorit");
+      }} 
      
 int main(int argc, char *argv[])
 {
