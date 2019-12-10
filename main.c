@@ -8,14 +8,12 @@ FILE* n(FILE *p, char pole[1000])  {
     printf("subor nie je k dispozicii");
     return;
   }
-  
-   //fscanf(p,"%s", pole);  
+    
    fgets(pole, 1000, p);
       if(p==NULL){
         printf("Spravu sa nepodarilo nacitat");
         return; 
         }  
-   //printf("%s", pole);
    rewind(p);
    return p;
 }
@@ -55,7 +53,6 @@ int u(char pole[1000], char pole2[1000], FILE*p) {
                       break;
          }
      }
-     //printf("%s", pole2);
      return 1;
      }
 
@@ -124,12 +121,10 @@ void h(char pole2[1000], int isu){
      }
      char *g;
      
-     //treba prerobit na switch-case
      
      g=pole2;
      while(*g!='\0'){
      celok++;
-     //printf("%c", *g);
        /*if(*g=='A'){pocty[0]++;}   
        if(*g=='B'){pocty[1]++;} 
        if(*g=='C'){pocty[2]++;} 
@@ -275,7 +270,6 @@ void h(char pole2[1000], int isu){
            printf("%c", j+65);
            }
      printf("\n");
-    //printf("%.0f %d", pocty[0], celok);
      
      }
      
