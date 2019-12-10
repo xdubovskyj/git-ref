@@ -29,14 +29,6 @@ int u(char pole[1001], char pole2[1001], FILE*p) {
      int q=0;
      char *e;
      e=pole2;
-     /*while(1){
-       *e=pole[q];
-       if ((*e>64&&*e<91)||(*e>96&&*e<123)){
-           printf("%c",*e); 
-           e++;                     
-         }
-         q++;
-     }*/
      if(p==NULL){
         printf("Sprava sa nenacitala\n");
         return 0; 
