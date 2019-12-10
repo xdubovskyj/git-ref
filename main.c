@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-FILE* n(FILE *p, char pole[1000])  {
+FILE* n(FILE *p, char pole[1001])  {
   
   p=fopen("sifra.txt", "r");  
   if(p==NULL){
@@ -9,7 +9,7 @@ FILE* n(FILE *p, char pole[1000])  {
     return;
   }
     
-   fgets(pole, 1000, p);
+   fgets(pole, 1001, p);
       if(p==NULL){
         printf("Spravu sa nepodarilo nacitat");
         return; 
@@ -17,7 +17,7 @@ FILE* n(FILE *p, char pole[1000])  {
    rewind(p);
    return p;
 }
-void v(FILE *p, char pole[1000])  {
+void v(FILE *p, char pole[1001])  {
       if(p==NULL){
         printf("Sprava nie je nacitana\n");
         return; 
@@ -25,7 +25,7 @@ void v(FILE *p, char pole[1000])  {
    printf("%s\n", pole);
 }
 
-int u(char pole[1000], char pole2[1000], FILE*p) {
+int u(char pole[1001], char pole2[1001], FILE*p) {
      int q=0;
      char *e;
      e=pole2;
@@ -41,7 +41,7 @@ int u(char pole[1000], char pole2[1000], FILE*p) {
         printf("Sprava sa nenacitala\n");
         return 0; 
         }  
-     for (q=0;q<1000;q++){
+     for (q=0;q<1001;q++){
          *e=pole[q];
          if ((pole[q]>64&&pole[q]<91)||(pole[q]>96&&pole[q]<123)){
            if(pole[q]>96&&pole[q]<123){
@@ -56,7 +56,7 @@ int u(char pole[1000], char pole2[1000], FILE*p) {
      return 1;
      }
 
-void s (char pole2[1000], int isu){
+void s (char pole2[1001], int isu){
      if(isu==0){
      printf("Nie je k dispozicii upravena sprava\n");
      }
@@ -70,7 +70,7 @@ void d(FILE *p){
      int pocet=0;
      int pele=0;
      char *l;
-     char pole3[1000];
+     char pole3[1001];
      scanf("%d", &k);
      rewind(p);
      while((pocet=fscanf(p, "%s", pole3))>0){
@@ -87,12 +87,12 @@ void d(FILE *p){
      rewind(p);
      }     
 
-void c(char pole2[1000], int isu){
+void c(char pole2[1001], int isu){
      int n;
      int t;
      char *z;
      char *r;
-     char pele2[1000];
+     char pele2[1001];
      if(isu==0){
      printf("Nie je k dispozicii upravena sprava\n");
      return;
@@ -112,7 +112,7 @@ void c(char pole2[1000], int isu){
      printf("%s\n", pele2);
      }
 
-void h(char pole2[1000], int isu){
+void h(char pole2[1001], int isu){
      float pocty[26] = {0};
      int celok=0;
      if(isu==0){
@@ -278,8 +278,8 @@ int main(int argc, char *argv[])
   FILE *p=NULL;
   
   char x;
-  char pole[1000];
-  char pole2[1000];
+  char pole[1001];
+  char pole2[1001];
   int isu=0;
   
   while(x=getchar()){
