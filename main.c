@@ -1,25 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-FILE* n(FILE *p, char pole[1000])  {
+FILE* n(FILE *p, char pole[1001])  {
   
   p=fopen("sifra.txt", "r");  
   if(p==NULL){
     printf("subor nie je k dispozicii");
     return;
   }
-  
-   //fscanf(p,"%s", pole);  
-   fgets(pole, 1000, p);
+    
+   fgets(pole, 1001, p);
       if(p==NULL){
         printf("Spravu sa nepodarilo nacitat");
         return; 
         }  
-   //printf("%s", pole);
    rewind(p);
    return p;
 }
-void v(FILE *p, char pole[1000])  {
+void v(FILE *p, char pole[1001])  {
       if(p==NULL){
         printf("Sprava nie je nacitana\n");
         return; 
@@ -27,7 +25,7 @@ void v(FILE *p, char pole[1000])  {
    printf("%s\n", pole);
 }
 
-int u(char pole[1000], char pole2[1000], FILE*p) {
+int u(char pole[1001], char pole2[1001], FILE*p) {
      int q=0;
      char *e;
      e=pole2;
@@ -43,7 +41,7 @@ int u(char pole[1000], char pole2[1000], FILE*p) {
         printf("Sprava sa nenacitala\n");
         return 0; 
         }  
-     for (q=0;q<1000;q++){
+     for (q=0;q<1001;q++){
          *e=pole[q];
          if ((pole[q]>64&&pole[q]<91)||(pole[q]>96&&pole[q]<123)){
            if(pole[q]>96&&pole[q]<123){
@@ -55,11 +53,10 @@ int u(char pole[1000], char pole2[1000], FILE*p) {
                       break;
          }
      }
-     //printf("%s", pole2);
      return 1;
      }
 
-void s (char pole2[1000], int isu){
+void s (char pole2[1001], int isu){
      if(isu==0){
      printf("Nie je k dispozicii upravena sprava\n");
      }
@@ -73,7 +70,7 @@ void d(FILE *p){
      int pocet=0;
      int pele=0;
      char *l;
-     char pole3[1000];
+     char pole3[1001];
      scanf("%d", &k);
      rewind(p);
      while((pocet=fscanf(p, "%s", pole3))>0){
@@ -90,12 +87,12 @@ void d(FILE *p){
      rewind(p);
      }     
 
-void c(char pole2[1000], int isu){
+void c(char pole2[1001], int isu){
      int n;
      int t;
      char *z;
      char *r;
-     char pele2[1000];
+     char pele2[1001];
      if(isu==0){
      printf("Nie je k dispozicii upravena sprava\n");
      return;
@@ -115,7 +112,7 @@ void c(char pole2[1000], int isu){
      printf("%s\n", pele2);
      }
 
-void h(char pole2[1000], int isu){
+void h(char pole2[1001], int isu){
      float pocty[26] = {0};
      int celok=0;
      if(isu==0){
@@ -124,13 +121,11 @@ void h(char pole2[1000], int isu){
      }
      char *g;
      
-     //treba prerobit na switch-case
      
      g=pole2;
      while(*g!='\0'){
      celok++;
-     //printf("%c", *g);
-       if(*g=='A'){pocty[0]++;}   
+       /*if(*g=='A'){pocty[0]++;}   
        if(*g=='B'){pocty[1]++;} 
        if(*g=='C'){pocty[2]++;} 
        if(*g=='D'){pocty[3]++;} 
@@ -155,8 +150,88 @@ void h(char pole2[1000], int isu){
        if(*g=='W'){pocty[22]++;} 
        if(*g=='X'){pocty[23]++;} 
        if(*g=='Y'){pocty[24]++;} 
-       if(*g=='Z'){pocty[25]++;}           
-                     
+       if(*g=='Z'){pocty[25]++;}*/           
+      
+      switch(*g){
+        case 'A':
+             pocty[0]++;
+             break;
+        case 'B':
+             pocty[1]++;
+             break;
+        case 'C':
+             pocty[2]++;
+             break;
+        case 'D':
+             pocty[3]++;
+             break;
+        case 'E':
+             pocty[4]++;
+             break;
+        case 'F':
+             pocty[5]++;
+             break;
+        case 'G':
+             pocty[6]++;
+             break;
+        case 'H':
+             pocty[7]++;
+             break;
+        case 'I':
+             pocty[8]++;
+             break;
+        case 'J':
+             pocty[9]++;
+             break;
+        case 'K':
+             pocty[10]++;
+             break;
+        case 'L':
+             pocty[11]++;
+             break;
+        case 'M':
+             pocty[12]++;
+             break;
+        case 'N':
+             pocty[13]++;
+             break;
+        case 'O':
+             pocty[14]++;
+             break;
+        case 'P':
+             pocty[15]++;
+             break;
+        case 'Q':
+             pocty[16]++;
+             break;
+        case 'R':
+             pocty[17]++;
+             break;
+        case 'S':
+             pocty[18]++;
+             break;
+        case 'T':
+             pocty[19]++;
+             break;
+        case 'U':
+             pocty[20]++;
+             break;
+        case 'V':
+             pocty[21]++;
+             break;
+        case 'W':
+             pocty[22]++;
+             break;
+        case 'X':
+             pocty[23]++;
+             break;
+        case 'Y':
+             pocty[24]++;
+             break;
+        case 'Z':
+             pocty[25]++;
+             break;
+                 }               
      g++;
      }
      
@@ -195,7 +270,6 @@ void h(char pole2[1000], int isu){
            printf("%c", j+65);
            }
      printf("\n");
-    //printf("%.0f %d", pocty[0], celok);
      
      }
      
@@ -204,8 +278,8 @@ int main(int argc, char *argv[])
   FILE *p=NULL;
   
   char x;
-  char pole[1000];
-  char pole2[1000];
+  char pole[1001];
+  char pole2[1001];
   int isu=0;
   
   while(x=getchar()){
