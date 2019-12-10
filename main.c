@@ -269,7 +269,7 @@ int main(int argc, char *argv[])
          break;
     case 'k':
          k(p);
-         break;                  
+         return 0;                  
   }                   
     /*if(x=='k'){
       if (fclose(p)==EOF) {
