@@ -266,6 +266,9 @@ int main(int argc, char *argv[])
          break;
     case 'c': 
          c(pole2, isu);
+         break;
+    case 'k':
+         k(p);
          break;                  
   }                   
     if(x=='k'){
