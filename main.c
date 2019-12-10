@@ -106,7 +106,7 @@ void h(char pole2[1001], int isu){
      return;
      }
      char *g;
-     
+
      
      g=pole2;
      while(*g!='\0'){
@@ -231,6 +231,8 @@ void h(char pole2[1001], int isu){
      printf("\n");
      
      }
+
+void k(){}   
      
 int main(int argc, char *argv[])
 {
