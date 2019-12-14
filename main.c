@@ -101,6 +101,28 @@ void sifra(char pole2[VELKOSTPOLA], int isu){
      }
      printf("%s\n", pele2);
      }
+     
+void histogramprint(float pocty[26], int max) {
+     int i, j;
+     for(i=max;i>0;i--){
+       for (j=0;j<26;j++){
+           if (pocty[j]>=i){
+             printf("*");
+           } else {
+             printf(" ");
+           }
+           }
+           printf("\n");
+     }
+     }
+     
+void histogramlegenda() {
+     int j;
+     for (j=0;j<26;j++){
+           printf("%c", j+65);
+           }
+     printf("\n");
+     }
 
 void histogram(char pole2[VELKOSTPOLA], int isu){
      float pocty[26] = {0};
@@ -218,21 +240,10 @@ void histogram(char pole2[VELKOSTPOLA], int isu){
          }
      }
      
-     for(i=max;i>0;i--){
-       for (j=0;j<26;j++){
-           if (pocty[j]>=i){
-             printf("*");
-           } else {
-             printf(" ");
-           }
-           }
-           printf("\n");
-     }
+     histogramprint(pocty, max);
      
-     for (j=0;j<26;j++){
-           printf("%c", j+65);
-           }
-     printf("\n");
+     histogramlegenda();
+     
      
      }
 
