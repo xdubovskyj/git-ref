@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-FILE* n(FILE *p, char pole[1001])  {
+FILE* nacitanie(FILE *p, char pole[1001])  {
   
   p=fopen("sifra.txt", "r");  
   if(p==NULL){
@@ -17,7 +17,7 @@ FILE* n(FILE *p, char pole[1001])  {
    rewind(p);
    return p;
 }
-void v(FILE *p, char pole[1001])  {
+void vypis(FILE *p, char pole[1001])  {
       if(p==NULL){
         printf("Sprava nie je nacitana\n");
         return; 
@@ -25,7 +25,7 @@ void v(FILE *p, char pole[1001])  {
    printf("%s\n", pole);
 }
 
-int u(char pole[1001], char pole2[1001], FILE*p) {
+int uprava(char pole[1001], char pole2[1001], FILE*p) {
      int q=0;
      char *e;
      e=pole2;
@@ -48,7 +48,7 @@ int u(char pole[1001], char pole2[1001], FILE*p) {
      return 1;
      }
 
-void s (char pole2[1001], int isu){
+void vypisuprava (char pole2[1001], int isu){
      switch(isu){
        case 0: printf("Nie je k dispozicii upravena sprava\n");
        break;
@@ -57,7 +57,7 @@ void s (char pole2[1001], int isu){
                  }
      } 
      
-void d(FILE *p){
+void vypisdlzka(FILE *p){
      int k, pocet=0, pele=0;
      char *l, pole3[1001];
      scanf("%d", &k);
@@ -76,7 +76,7 @@ void d(FILE *p){
      rewind(p);
      }     
 
-void c(char pole2[1001], int isu){
+void sifra(char pole2[1001], int isu){
      int n,t;
      char *z, *r, pele2[1001];
      if(isu==0){
@@ -98,7 +98,7 @@ void c(char pole2[1001], int isu){
      printf("%s\n", pele2);
      }
 
-void h(char pole2[1001], int isu){
+void histogram(char pole2[1001], int isu){
      float pocty[26] = {0};
      int celok=0;
      if(isu==0){
@@ -232,7 +232,7 @@ void h(char pole2[1001], int isu){
      
      }
 
-void k(FILE *p){
+void zatvaranie(FILE *p){
      if (fclose(p)==EOF) {
      printf("subor sa nepodarilo zatvorit");
       }} 
@@ -247,28 +247,28 @@ int main(int argc, char *argv[])
   while(x=getchar()){
   switch(x){
     case 'n':
-         p = n(p, pole);
+         p = nacitanie(p, pole);
          break;
     case 'v':
-         v(p, pole);
+         vypis(p, pole);
          break;
     case 'u':
-         isu=u(pole, pole2,p);
+         isu=uprava(pole, pole2,p);
          break;
     case 's':
-         s(pole2, isu);
+         vypisuprava(pole2, isu);
          break;
     case 'd':
-         d(p);
+         vypisdlzka(p);
          break;
     case 'h':
-         h(pole2, isu);
+         histogram(pole2, isu);
          break;
     case 'c': 
-         c(pole2, isu);
+         sifra(pole2, isu);
          break;
     case 'k':
-         k(p);
+         zatvaranie(p);
          return 0;                  
   }                   
   }
