@@ -32,30 +32,30 @@ void vypis(FILE *p, char pole[VELKOSTPOLA])  {
 }
 
 int uprava(char pole[VELKOSTPOLA], char pole2[VELKOSTPOLA], FILE*p) {
-     int q=0;
+     int index=0;
      char *e;
      e=pole2;
      if(p==NULL){
         printf("Sprava sa nenacitala\n");
         return 0; 
         }  
-     for (q=0;q<VELKOSTPOLA;q++){
-         *e=pole[q];
-         if ((pole[q]>64&&pole[q]<91)||(pole[q]>96&&pole[q]<123)){
-           if(pole[q]>96&&pole[q]<123){
-           *e=pole[q]-32;                            
+     for (index=0;index<VELKOSTPOLA;index++){
+         *e=pole[index];
+         if ((pole[index]>64&&pole[index]<91)||(pole[index]>96&&pole[index]<123)){
+           if(pole[index]>96&&pole[index]<123){
+           *e=pole[index]-32;                            
            }
            e++;                        
          }
-         if (pole[q] == NULL || pole[q] == EOF) {
+         if (pole[index] == NULL || pole[index] == EOF) {
                       break;
          }
      }
      return 1;
      }
 
-void vypisuprava (char pole2[VELKOSTPOLA], int isu){
-     switch(isu){
+void vypisuprava (char pole2[VELKOSTPOLA], int boloupravene){
+     switch(boloupravene){
        case 0: printf(NOMSGEDITED);
        break;
        case 1: printf("%s\n", pole2);
@@ -82,10 +82,10 @@ void vypisdlzka(FILE *p){
      rewind(p);
      }     
 
-void sifra(char pole2[VELKOSTPOLA], int isu){
+void sifra(char pole2[VELKOSTPOLA], int boloupravene){
      int n,t;
      char *z, *r, pele2[VELKOSTPOLA];
-     if(isu==0){
+     if(boloupravene==0){
      printf(NOMSGEDITED);
      return;
      }
@@ -115,7 +115,7 @@ int main(int argc, char *argv[])
   FILE *p=NULL;
   
   char x, pole[VELKOSTPOLA], pole2[VELKOSTPOLA];
-  int isu=0;
+  int boloupravene=0;
   
   while(x=getchar()){
   switch(x){
@@ -126,19 +126,19 @@ int main(int argc, char *argv[])
          vypis(p, pole);
          break;
     case 'u':
-         isu=uprava(pole, pole2,p);
+         boloupravene=uprava(pole, pole2,p);
          break;
     case 's':
-         vypisuprava(pole2, isu);
+         vypisuprava(pole2, boloupravene);
          break;
     case 'd':
          vypisdlzka(p);
          break;
     case 'h':
-         histogram(pole2, isu);
+         histogram(pole2, boloupravene);
          break;
     case 'c': 
-         sifra(pole2, isu);
+         sifra(pole2, boloupravene);
          break;
     case 'k':
          zatvaranie(p);
