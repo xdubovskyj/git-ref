@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-FILE* nacitanie(FILE *p, char pole[1001])  {
+#define VELKOSTPOLA 1001
+#define STREND '\0'
+#define NOMSGEDITED "Nie je k dispozicii upravena sprava\n"
+
+FILE* nacitanie(FILE *p, char pole[VELKOSTPOLA])  {
   
   p=fopen("sifra.txt", "r");  
   if(p==NULL){
@@ -9,7 +13,7 @@ FILE* nacitanie(FILE *p, char pole[1001])  {
     return;
   }
     
-   fgets(pole, 1001, p);
+   fgets(pole, VELKOSTPOLA, p);
       if(p==NULL){
         printf("Spravu sa nepodarilo nacitat");
         return; 
@@ -17,7 +21,7 @@ FILE* nacitanie(FILE *p, char pole[1001])  {
    rewind(p);
    return p;
 }
-void vypis(FILE *p, char pole[1001])  {
+void vypis(FILE *p, char pole[VELKOSTPOLA])  {
       if(p==NULL){
         printf("Sprava nie je nacitana\n");
         return; 
@@ -25,7 +29,7 @@ void vypis(FILE *p, char pole[1001])  {
    printf("%s\n", pole);
 }
 
-int uprava(char pole[1001], char pole2[1001], FILE*p) {
+int uprava(char pole[VELKOSTPOLA], char pole2[VELKOSTPOLA], FILE*p) {
      int q=0;
      char *e;
      e=pole2;
@@ -33,7 +37,7 @@ int uprava(char pole[1001], char pole2[1001], FILE*p) {
         printf("Sprava sa nenacitala\n");
         return 0; 
         }  
-     for (q=0;q<1001;q++){
+     for (q=0;q<VELKOSTPOLA;q++){
          *e=pole[q];
          if ((pole[q]>64&&pole[q]<91)||(pole[q]>96&&pole[q]<123)){
            if(pole[q]>96&&pole[q]<123){
@@ -48,9 +52,9 @@ int uprava(char pole[1001], char pole2[1001], FILE*p) {
      return 1;
      }
 
-void vypisuprava (char pole2[1001], int isu){
+void vypisuprava (char pole2[VELKOSTPOLA], int isu){
      switch(isu){
-       case 0: printf("Nie je k dispozicii upravena sprava\n");
+       case 0: printf(NOMSGEDITED);
        break;
        case 1: printf("%s\n", pole2);
        break;
@@ -59,13 +63,13 @@ void vypisuprava (char pole2[1001], int isu){
      
 void vypisdlzka(FILE *p){
      int k, pocet=0, pele=0;
-     char *l, pole3[1001];
+     char *l, pole3[VELKOSTPOLA];
      scanf("%d", &k);
      rewind(p);
      while((pocet=fscanf(p, "%s", pole3))>0){
      pele=0;
      l=pole3;
-     while(*l!='\0'){
+     while(*l!=STREND){
      pele++;
      l++;
      }
@@ -76,17 +80,17 @@ void vypisdlzka(FILE *p){
      rewind(p);
      }     
 
-void sifra(char pole2[1001], int isu){
+void sifra(char pole2[VELKOSTPOLA], int isu){
      int n,t;
-     char *z, *r, pele2[1001];
+     char *z, *r, pele2[VELKOSTPOLA];
      if(isu==0){
-     printf("Nie je k dispozicii upravena sprava\n");
+     printf(NOMSGEDITED);
      return;
      }
      scanf("%d", &n);
      z=pole2;
      r=pele2;
-     while(*z!='\0'){
+     while(*z!=STREND){
      if(*z-n<=65){
      t=65-(*z-n);
      *r=90-t;
@@ -98,18 +102,18 @@ void sifra(char pole2[1001], int isu){
      printf("%s\n", pele2);
      }
 
-void histogram(char pole2[1001], int isu){
+void histogram(char pole2[VELKOSTPOLA], int isu){
      float pocty[26] = {0};
      int celok=0;
      if(isu==0){
-     printf("Nie je k dispozicii upravena sprava\n");
+     printf(NOMSGEDITED);
      return;
      }
      char *g;
 
      
      g=pole2;
-     while(*g!='\0'){
+     while(*g!=STREND){
      celok++;
       switch(*g){
         case 'A':
@@ -241,7 +245,7 @@ int main(int argc, char *argv[])
 {
   FILE *p=NULL;
   
-  char x, pole[1001], pole2[1001];
+  char x, pole[VELKOSTPOLA], pole2[VELKOSTPOLA];
   int isu=0;
   
   while(x=getchar()){
