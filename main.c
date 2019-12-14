@@ -123,6 +123,30 @@ void histogramlegenda() {
            }
      printf("\n");
      }
+     
+int histogrammax(float pocty[26], int celok) {
+     int i, j, max=0;
+     for (i=0;i<26;i++){
+         pocty[i]=(pocty[i]/celok)*100;
+
+         if (pocty[i]<=10&&pocty[i]>0){pocty[i]=1;}
+         if (pocty[i]<=20&&pocty[i]>10){pocty[i]=2;}
+         if (pocty[i]<=30&&pocty[i]>20){pocty[i]=3;}
+         if (pocty[i]<=40&&pocty[i]>30){pocty[i]=4;}
+         if (pocty[i]<=50&&pocty[i]>40){pocty[i]=5;}
+         if (pocty[i]<=60&&pocty[i]>50){pocty[i]=6;}
+         if (pocty[i]<=70&&pocty[i]>60){pocty[i]=7;}
+         if (pocty[i]<=80&&pocty[i]>70){pocty[i]=8;}
+         if (pocty[i]<=90&&pocty[i]>80){pocty[i]=9;}
+         if (pocty[i]<=100&&pocty[i]>90){pocty[i]=10;}
+         
+         if ( pocty[i] > max ) {
+           max = pocty[i];
+         }
+     }
+     
+     return max;
+     }
 
 void histogram(char pole2[VELKOSTPOLA], int isu){
      float pocty[26] = {0};
@@ -132,8 +156,6 @@ void histogram(char pole2[VELKOSTPOLA], int isu){
      return;
      }
      char *g;
-
-     
      g=pole2;
      while(*g!=STREND){
      celok++;
@@ -220,31 +242,9 @@ void histogram(char pole2[VELKOSTPOLA], int isu){
      g++;
      }
      
-     int i, j, max=0;
-     for (i=0;i<26;i++){
-         pocty[i]=(pocty[i]/celok)*100;
-
-         if (pocty[i]<=10&&pocty[i]>0){pocty[i]=1;}
-         if (pocty[i]<=20&&pocty[i]>10){pocty[i]=2;}
-         if (pocty[i]<=30&&pocty[i]>20){pocty[i]=3;}
-         if (pocty[i]<=40&&pocty[i]>30){pocty[i]=4;}
-         if (pocty[i]<=50&&pocty[i]>40){pocty[i]=5;}
-         if (pocty[i]<=60&&pocty[i]>50){pocty[i]=6;}
-         if (pocty[i]<=70&&pocty[i]>60){pocty[i]=7;}
-         if (pocty[i]<=80&&pocty[i]>70){pocty[i]=8;}
-         if (pocty[i]<=90&&pocty[i]>80){pocty[i]=9;}
-         if (pocty[i]<=100&&pocty[i]>90){pocty[i]=10;}
-         
-         if ( pocty[i] > max ) {
-           max = pocty[i];
-         }
-     }
-     
+     int max = histogrammax(pocty, celok);
      histogramprint(pocty, max);
-     
      histogramlegenda();
-     
-     
      }
 
 void zatvaranie(FILE *p){
